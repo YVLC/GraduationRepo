@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gebruiker\\source\\repos\\BettingApp\\BettingApp\\BettingApp.csproj": {}
+    "C:\\Users\\gebruiker\\Desktop\\Graduation Project\\BettingApp\\BettingApp\\BettingApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gebruiker\\source\\repos\\BettingApp\\BettingApp\\BettingApp.csproj": {
+    "C:\\Users\\gebruiker\\Desktop\\Graduation Project\\BettingApp\\BettingApp\\BettingApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gebruiker\\source\\repos\\BettingApp\\BettingApp\\BettingApp.csproj",
+        "projectUniqueName": "C:\\Users\\gebruiker\\Desktop\\Graduation Project\\BettingApp\\BettingApp\\BettingApp.csproj",
         "projectName": "BettingApp",
-        "projectPath": "C:\\Users\\gebruiker\\source\\repos\\BettingApp\\BettingApp\\BettingApp.csproj",
+        "projectPath": "C:\\Users\\gebruiker\\Desktop\\Graduation Project\\BettingApp\\BettingApp\\BettingApp.csproj",
         "packagesPath": "C:\\Users\\gebruiker\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gebruiker\\source\\repos\\BettingApp\\BettingApp\\obj\\",
+        "outputPath": "C:\\Users\\gebruiker\\Desktop\\Graduation Project\\BettingApp\\BettingApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -51,6 +51,12 @@
               "version": "[7.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.0, )"
             },

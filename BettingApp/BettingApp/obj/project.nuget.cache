@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dUMH1On63rkCmxzB9y0dQG1JL8qSkHnTPiHh/ilLNu1CKS+oHM1PIkWcaavLKJVi4nUMEk9HV4WzhEEYGILDDw==",
+  "dgSpecHash": "2p9w2CZc5WZNHhyzhWT60AyYhMAnXoLeOY8df67jGu9vkQaDF+3eQ8FAb1PxDYQHedaeRcKf0CQmpI2Ijzs8Bg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gebruiker\\source\\repos\\BettingApp\\BettingApp\\BettingApp.csproj",
+  "projectFilePath": "C:\\Users\\gebruiker\\Desktop\\Graduation Project\\BettingApp\\BettingApp\\BettingApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gebruiker\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\gebruiker\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
@@ -17,6 +17,7 @@
     "C:\\Users\\gebruiker\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.0\\microsoft.entityframeworkcore.design.7.0.0.nupkg.sha512",
     "C:\\Users\\gebruiker\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.0\\microsoft.entityframeworkcore.relational.7.0.0.nupkg.sha512",
     "C:\\Users\\gebruiker\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.0\\microsoft.entityframeworkcore.sqlserver.7.0.0.nupkg.sha512",
+    "C:\\Users\\gebruiker\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.0\\microsoft.entityframeworkcore.tools.7.0.0.nupkg.sha512",
     "C:\\Users\\gebruiker\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\gebruiker\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\gebruiker\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",

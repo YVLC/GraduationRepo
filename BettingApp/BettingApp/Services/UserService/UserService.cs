@@ -46,9 +46,9 @@ namespace Test.API.Services.UserService
                 return null;
 
             dbuser.FirstName = request.FirstName;
-            dbuser.Name = request.Name;
             dbuser.LastName = request.LastName;
-            dbuser.Place = request.Place;
+            dbuser.Password = request.Password;
+            dbuser.Email = request.Email;
 
             await _context.SaveChangesAsync();
 
