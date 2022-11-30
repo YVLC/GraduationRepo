@@ -15,6 +15,14 @@ namespace Test.API.Services.UserService
         }
         public async Task<bool> Register(User hero)
         {
+            var user = await _context.Users.ToListAsync();
+            foreach(var i in user)
+            {
+                if (i.UserName == hero.UserName)
+                {
+                    return false;
+                }
+            }
             _context.Users.Add(hero);
             await _context.SaveChangesAsync();
             return true;
