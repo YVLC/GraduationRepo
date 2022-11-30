@@ -40,6 +40,11 @@ namespace BettingApp.Controllers
         {
             return await _userService.Register(user);
         }
+        [HttpPost("auth")]
+        public async Task<ActionResult<User>> Authenticate(string userName, string password)
+        {
+            return await _userService.Authenticate(userName, password);
+        }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult<List<User>>> DeleteUser(int id)

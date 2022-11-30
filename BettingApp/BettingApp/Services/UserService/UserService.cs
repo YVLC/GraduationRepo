@@ -20,7 +20,7 @@ namespace Test.API.Services.UserService
             {
                 if (i.UserName == hero.UserName)
                 {
-                    return false;
+                    throw new Exception("Username Exists");
                 }
             }
             _context.Users.Add(hero);
@@ -67,6 +67,17 @@ namespace Test.API.Services.UserService
             return await _context.Users.ToListAsync();
         }
 
-
+        public async Task<User> Authenticate(string userName, string passWord)
+        {
+            var user = await _context.Users.ToListAsync();
+            foreach (var i in user)
+            {
+                if (i.UserName == userName && i.Password == passWord)
+                { 
+                    return i;
+                }
+            }
+            return null;
+        }
     }
 }
