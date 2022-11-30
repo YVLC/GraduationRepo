@@ -13,11 +13,11 @@ namespace Test.API.Services.UserService
         {
             _context = context;
         }
-        public async Task<List<User>> AddUser(User hero)
+        public async Task<bool> Register(User hero)
         {
             _context.Users.Add(hero);
             await _context.SaveChangesAsync();
-            return await _context.Users.ToListAsync();
+            return true;
         }
 
         public async Task<List<User>> DeleteUser(int id)
@@ -45,8 +45,7 @@ namespace Test.API.Services.UserService
             if (dbuser == null)
                 return null;
 
-            dbuser.FirstName = request.FirstName;
-            dbuser.LastName = request.LastName;
+            dbuser.UserName = request.UserName;
             dbuser.Password = request.Password;
             dbuser.Email = request.Email;
 

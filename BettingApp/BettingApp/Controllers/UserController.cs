@@ -35,10 +35,10 @@ namespace BettingApp.Controllers
             return await _userService.UpdateUser(request);
         }
 
-        [HttpPost("add")]
-        public async Task<ActionResult<List<User>>> AddUser(User user)
+        [HttpPost("register")]
+        public async Task<ActionResult<bool>> AddUser(User user)
         {
-            return await _userService.AddUser(user);
+            return await _userService.Register(user);
         }
 
         [HttpDelete("{id}")]
