@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2p9w2CZc5WZNHhyzhWT60AyYhMAnXoLeOY8df67jGu9vkQaDF+3eQ8FAb1PxDYQHedaeRcKf0CQmpI2Ijzs8Bg==",
+  "dgSpecHash": "HbVT/ygNI5Hqqq6jw/ip8IMcMyZcu8pw+ojglRV3OKEHtDyrOGA3OJmF4Y6CvWIQxXEeKJInyQqdoKNvMXnsRg==",
   "success": true,
   "projectFilePath": "C:\\Users\\gebruiker\\Desktop\\Graduation Project\\BettingApp\\BettingApp\\BettingApp.csproj",
   "expectedPackageFiles": [
@@ -41,6 +41,7 @@
     "C:\\Users\\gebruiker\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\gebruiker\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\gebruiker\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
+    "C:\\Users\\gebruiker\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512",
     "C:\\Users\\gebruiker\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\gebruiker\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\gebruiker\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
