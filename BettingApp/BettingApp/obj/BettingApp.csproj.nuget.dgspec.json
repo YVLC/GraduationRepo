@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vlad.chechina\\Desktop\\GraduationProject\\BettingApp\\BettingApp\\BettingApp.csproj": {}
+    "C:\\Users\\gebruiker\\Desktop\\Graduation Project\\BettingApp\\BettingApp\\BettingApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vlad.chechina\\Desktop\\GraduationProject\\BettingApp\\BettingApp\\BettingApp.csproj": {
+    "C:\\Users\\gebruiker\\Desktop\\Graduation Project\\BettingApp\\BettingApp\\BettingApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vlad.chechina\\Desktop\\GraduationProject\\BettingApp\\BettingApp\\BettingApp.csproj",
+        "projectUniqueName": "C:\\Users\\gebruiker\\Desktop\\Graduation Project\\BettingApp\\BettingApp\\BettingApp.csproj",
         "projectName": "BettingApp",
-        "projectPath": "C:\\Users\\vlad.chechina\\Desktop\\GraduationProject\\BettingApp\\BettingApp\\BettingApp.csproj",
-        "packagesPath": "C:\\Users\\vlad.chechina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vlad.chechina\\Desktop\\GraduationProject\\BettingApp\\BettingApp\\obj\\",
+        "projectPath": "C:\\Users\\gebruiker\\Desktop\\Graduation Project\\BettingApp\\BettingApp\\BettingApp.csproj",
+        "packagesPath": "C:\\Users\\gebruiker\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gebruiker\\Desktop\\Graduation Project\\BettingApp\\BettingApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vlad.chechina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -1,5 +1,6 @@
 ﻿using BettingApp;
 using BettingApp.Data;
+using BettingApp.Requests;
 using BettingApp.Services.UserService;
 using Microsoft.EntityFrameworkCore;
 
@@ -67,17 +68,17 @@ namespace Test.API.Services.UserService
             return await _context.Users.ToListAsync();
         }
 
-        public async Task<User> Authenticate(string userName, string passWord)
+        public async Task<int> Authenticate(LoginRequest req)
         {
             var user = await _context.Users.ToListAsync();
             foreach (var i in user)
             {
-                if (i.UserName == userName && i.Password == passWord)
+                if (i.UserName == req.UserName && i.Password == req.Password)
                 { 
-                    return i;
+                    return 1;
                 }
             }
-            return null;
+            throw new Exception(StatusCodes.Status409Conflict.ToString());
         }
     }
 }

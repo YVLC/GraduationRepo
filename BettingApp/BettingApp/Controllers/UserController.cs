@@ -1,4 +1,5 @@
 ﻿using BettingApp.Data;
+using BettingApp.Requests;
 using BettingApp.Services.UserService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -41,9 +42,9 @@ namespace BettingApp.Controllers
             return await _userService.Register(user);
         }
         [HttpPost("auth")]
-        public async Task<ActionResult<User>> Authenticate(string userName, string password)
+        public async Task<ActionResult<int>> Authenticate(LoginRequest req)
         {
-            return await _userService.Authenticate(userName, password);
+            return await _userService.Authenticate(req);
         }
 
         [HttpDelete("{id}")]
