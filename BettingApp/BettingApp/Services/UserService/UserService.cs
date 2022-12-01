@@ -13,19 +13,19 @@ namespace Test.API.Services.UserService
         {
             _context = context;
         }
-        public async Task<bool> Register(User hero)
+        public async Task<int> Register(User hero)
         {
             var user = await _context.Users.ToListAsync();
             foreach(var i in user)
             {
                 if (i.UserName == hero.UserName)
                 {
-                    throw new Exception("Username Exists");
+                    throw new Exception(StatusCodes.Status409Conflict.ToString());
                 }
             }
             _context.Users.Add(hero);
             await _context.SaveChangesAsync();
-            return true;
+            return 1;
         }
 
         public async Task<List<User>> DeleteUser(int id)

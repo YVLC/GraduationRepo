@@ -4,7 +4,7 @@
     {
         Task<List<User>> GetAllUsers();
         Task<User> GetUser(int id);
-        Task<bool> Register(User user);
+        Task<int> Register(User user);
         Task<List<User>> UpdateUser(User request);
         Task<List<User>> DeleteUser(int id);
         Task<User> Authenticate(string userName, string passWord);

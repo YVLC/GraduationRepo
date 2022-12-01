@@ -36,7 +36,7 @@ namespace BettingApp.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<bool>> AddUser(User user)
+        public async Task<ActionResult<int>> AddUser(User user)
         {
             return await _userService.Register(user);
         }
