@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BettingApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BettingApp.Data
 {

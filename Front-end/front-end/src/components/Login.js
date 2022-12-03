@@ -1,9 +1,15 @@
 import { useRef, useState, useEffect} from 'react';
-
-import axios from './api/axios';
+import useAuth from '../hooks/useAuth';
+import { useNavigate, useLocation } from 'react-router-dom';
+import axios from '../api/axios';
 const LOGIN_URL = 'api/User/auth';
 
 const Login = () => {
+    const { setAuth } = useAuth();
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
     const userRef = useRef();
     const errRef = useRef();
 
@@ -34,12 +40,15 @@ const Login = () => {
             //console.log(JSON.stringify(response));
             setUser('');
             setPwd('');
-            setSuccess(true);
+            const accessToken = response?.data?.accessToken;
+            const roles = response?.data?.roles;
+            setAuth({ user, pwd, roles, accessToken });
+            navigate(from, { replace: true });
         } catch (err) {
             if (!err?.response) {
                 setErrMsg('No Server Response');
             } else if (err.response?.status === 400) {
-                setErrMsg('Missing Username or Password');
+                setErrMsg('Username or password incorrect');
             } else if (err.response?.status === 401) {
                 setErrMsg('Unauthorized');
             } else {

@@ -1,5 +1,5 @@
-﻿using BettingApp;
-using BettingApp.Data;
+﻿using BettingApp.Data;
+using BettingApp.Models;
 using BettingApp.Requests;
 using BettingApp.Services.UserService;
 using Microsoft.EntityFrameworkCore;
@@ -78,7 +78,7 @@ namespace Test.API.Services.UserService
                     return 1;
                 }
             }
-            throw new Exception(StatusCodes.Status409Conflict.ToString());
+            return 0;
         }
     }
 }

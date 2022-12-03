@@ -1,4 +1,5 @@
 ﻿using BettingApp.Data;
+using BettingApp.Models;
 using BettingApp.Requests;
 using BettingApp.Services.UserService;
 using Microsoft.AspNetCore.Http;
@@ -44,7 +45,12 @@ namespace BettingApp.Controllers
         [HttpPost("auth")]
         public async Task<ActionResult<int>> Authenticate(LoginRequest req)
         {
-            return await _userService.Authenticate(req);
+            var a = await _userService.Authenticate(req);
+            if(a == 0)
+            {
+                return BadRequest();
+            }
+            return Ok();
         }
 
         [HttpDelete("{id}")]
