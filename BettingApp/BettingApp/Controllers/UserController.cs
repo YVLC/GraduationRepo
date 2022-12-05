@@ -27,7 +27,7 @@ namespace BettingApp.Controllers
             return await _userService.GetAllUsers();
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> Get(int id)
+        public async Task<ActionResult<User>> Get(Guid id)
         {
             return await _userService.GetUser(id);
         }
@@ -38,7 +38,7 @@ namespace BettingApp.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<int>> AddUser(User user)
+        public async Task<ActionResult<int>> AddUser(AuthRequest user)
         {
             return await _userService.Register(user);
         }
@@ -54,7 +54,7 @@ namespace BettingApp.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<List<User>>> DeleteUser(int id)
+        public async Task<ActionResult<List<User>>> DeleteUser(Guid id)
         {
             return await _userService.DeleteUser(id);
         }

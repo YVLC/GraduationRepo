@@ -6,10 +6,10 @@ namespace BettingApp.Services.UserService
     public interface IUserService
     {
         Task<List<User>> GetAllUsers();
-        Task<User> GetUser(int id);
-        Task<int> Register(User user);
+        Task<User> GetUser(Guid id);
+        Task<int> Register(AuthRequest user);
         Task<List<User>> UpdateUser(User request);
-        Task<List<User>> DeleteUser(int id);
+        Task<List<User>> DeleteUser(Guid id);
         Task<int> Authenticate(LoginRequest req);
     }
 }

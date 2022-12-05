@@ -15,7 +15,7 @@ namespace BettingApp.Controllers
             }
 
             [HttpGet("get-all")]
-            public async Task<ActionResult<List<Bets>>> Get(int id)
+            public async Task<ActionResult<List<Bets>>> Get(Guid id)
             {
                 return await _betService.GetAllBetsByUser(id);
             }

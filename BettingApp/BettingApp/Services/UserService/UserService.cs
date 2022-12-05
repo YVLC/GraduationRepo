@@ -14,22 +14,28 @@ namespace Test.API.Services.UserService
         {
             _context = context;
         }
-        public async Task<int> Register(User hero)
+        public async Task<int> Register(AuthRequest request)
         {
-            var user = await _context.Users.ToListAsync();
-            foreach(var i in user)
+            var users = await _context.Users.ToListAsync();
+            foreach(var i in users)
             {
-                if (i.UserName == hero.UserName)
+                if (i.UserName == request.UserName)
                 {
                     throw new Exception(StatusCodes.Status409Conflict.ToString());
                 }
             }
-            _context.Users.Add(hero);
+            User user = new User {
+                Id = new Guid(),
+                UserName = request.UserName, 
+                Email=request.Email, 
+                Password=request.Password};
+
+            _context.Users.Add(user);
             await _context.SaveChangesAsync();
             return 1;
         }
 
-        public async Task<List<User>> DeleteUser(int id)
+        public async Task<List<User>> DeleteUser(Guid id)
         {
             var user = await _context.Users.FindAsync(id);
             if (user == null)
@@ -40,7 +46,7 @@ namespace Test.API.Services.UserService
             return user2;
         }
 
-        public async Task<User> GetUser(int id)
+        public async Task<User> GetUser(Guid id)
         {
             var user = await _context.Users.FindAsync(id);
             if (user == null)

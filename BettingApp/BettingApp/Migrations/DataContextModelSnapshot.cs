@@ -43,8 +43,8 @@ namespace BettingApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<float>("Win")
                         .HasColumnType("real");
@@ -58,11 +58,9 @@ namespace BettingApp.Migrations
 
             modelBuilder.Entity("BettingApp.Models.User", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -83,13 +81,11 @@ namespace BettingApp.Migrations
 
             modelBuilder.Entity("BettingApp.Models.Bets", b =>
                 {
-                    b.HasOne("BettingApp.Models.User", "User")
+                    b.HasOne("BettingApp.Models.User", null)
                         .WithMany("Bets")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("BettingApp.Models.User", b =>

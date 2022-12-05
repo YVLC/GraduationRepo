@@ -18,13 +18,13 @@ public class BetService : IBetService
         return true;
     }
 
-    public async Task<List<Bets>> GetAllBetsByUser(int id)
+    public async Task<List<Bets>> GetAllBetsByUser(Guid id)
     {
         var bets = await _context.Bets.ToListAsync();
         List<Bets> result = new List<Bets>();
         foreach (var i in bets)
         {
-            if (i.User.Id == id)
+            if (i.UserId == id)
             {
                 result.Add(i);
             }
