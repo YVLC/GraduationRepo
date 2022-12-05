@@ -5,25 +5,18 @@
 namespace BettingApp.Migrations
 {
     /// <inheritdoc />
-    public partial class addemail : Migration
+    public partial class Init2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "Email",
-                table: "Users",
-                type: "nvarchar(max)",
-                nullable: false,
-                defaultValue: "");
+
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "Email",
-                table: "Users");
+
         }
     }
 }

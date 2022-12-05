@@ -8,5 +8,6 @@ namespace BettingApp.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Bets> Bets { get; set; }
     }
 }
