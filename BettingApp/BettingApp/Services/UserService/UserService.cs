@@ -63,14 +63,16 @@ namespace Test.API.Services.UserService
             return user;
         }
 
-        public async Task<List<User>> UpdateUser(User request)
+        public async Task<List<User>> UpdateUser(UpdateRequest request)
         {
             var dbuser = await _context.Users.FindAsync(request.Id);
             if (dbuser == null)
                 return null;
+            CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
 
             dbuser.UserName = request.UserName;
-            dbuser.Password = request.Password;
+            dbuser.PasswordHash = passwordHash;
+            dbuser.PasswordSalt = passwordSalt;
             dbuser.Email = request.Email;
 
             await _context.SaveChangesAsync();

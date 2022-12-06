@@ -23,7 +23,6 @@ function NavBar() {
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
               <NavLink
-                exact
                 to="/"
                 activeClassName="active"
                 className="nav-links"
@@ -34,7 +33,6 @@ function NavBar() {
             </li>
             <li className="nav-item">
               <NavLink
-                exact
                 to="/about"
                 activeClassName="active"
                 className="nav-links"
@@ -45,13 +43,12 @@ function NavBar() {
             </li>
             <li className="nav-item">
               <NavLink
-                exact
                 to="/profile"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
               >
-                Blog
+                Profile
               </NavLink>
             </li>
             <li className="nav-item">

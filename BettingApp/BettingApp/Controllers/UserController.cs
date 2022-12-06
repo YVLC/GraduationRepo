@@ -33,7 +33,7 @@ namespace BettingApp.Controllers
             return await _userService.GetUser(id);
         }
         [HttpPut("update")]
-        public async Task<ActionResult<List<User>>> UpdateUser(User request)
+        public async Task<ActionResult<List<User>>> UpdateUser(UpdateRequest request)
         {
             return await _userService.UpdateUser(request);
         }

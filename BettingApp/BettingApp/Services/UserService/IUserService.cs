@@ -8,7 +8,7 @@ namespace BettingApp.Services.UserService
         Task<List<User>> GetAllUsers();
         Task<User> GetUser(Guid id);
         Task<int> Register(AuthRequest user);
-        Task<List<User>> UpdateUser(User request);
+        Task<List<User>> UpdateUser(UpdateRequest request);
         Task<List<User>> DeleteUser(Guid id);
         Task<string> Authenticate(LoginRequest req);
     }
