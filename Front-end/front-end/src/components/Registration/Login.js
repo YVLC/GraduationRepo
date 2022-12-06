@@ -1,10 +1,12 @@
-import { useRef, useState, useEffect} from 'react';
+import { useRef, useState, useEffect, useContext} from 'react';
+import AuthContext from "../../context/AuthProvider"
 import './style.css';
 
 import axios from '../../api/axios';
 const LOGIN_URL = 'api/User/auth';
 
 const Login = () => {
+    const {setAuth} = useContext(AuthContext);
     const userRef = useRef();
     const errRef = useRef();
 
@@ -33,6 +35,8 @@ const Login = () => {
             );
             console.log(JSON.stringify(response?.data));
             //console.log(JSON.stringify(response));
+            const accessToken = response?.data?.accessToken;
+            setAuth({user,pwd,accessToken});
             setUser('');
             setPwd('');
             setSuccess(true);

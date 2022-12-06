@@ -5,6 +5,7 @@ using BettingApp.Services.UserService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
 
 namespace BettingApp.Controllers
 {
@@ -43,14 +44,14 @@ namespace BettingApp.Controllers
             return await _userService.Register(user);
         }
         [HttpPost("auth")]
-        public async Task<ActionResult<int>> Authenticate(LoginRequest req)
+        public async Task<ActionResult<string>> Authenticate(LoginRequest req)
         {
             var a = await _userService.Authenticate(req);
-            if(a == 0)
+            if(a == null)
             {
-                return BadRequest();
+                return BadRequest("Invalid username or password");
             }
-            return Ok();
+            return Ok(a);
         }
 
         [HttpDelete("{id}")]

@@ -10,6 +10,6 @@ namespace BettingApp.Services.UserService
         Task<int> Register(AuthRequest user);
         Task<List<User>> UpdateUser(User request);
         Task<List<User>> DeleteUser(Guid id);
-        Task<int> Authenticate(LoginRequest req);
+        Task<string> Authenticate(LoginRequest req);
     }
 }
