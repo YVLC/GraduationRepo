@@ -1,15 +1,10 @@
 import { useRef, useState, useEffect} from 'react';
-import useAuth from '../hooks/useAuth';
-import { useNavigate, useLocation } from 'react-router-dom';
-import axios from '../api/axios';
+import './style.css';
+
+import axios from '../../api/axios';
 const LOGIN_URL = 'api/User/auth';
 
 const Login = () => {
-    const { setAuth } = useAuth();
-
-    const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from?.pathname || "/";
     const userRef = useRef();
     const errRef = useRef();
 
@@ -40,15 +35,12 @@ const Login = () => {
             //console.log(JSON.stringify(response));
             setUser('');
             setPwd('');
-            const accessToken = response?.data?.accessToken;
-            const roles = response?.data?.roles;
-            setAuth({ user, pwd, roles, accessToken });
-            navigate(from, { replace: true });
+            setSuccess(true);
         } catch (err) {
             if (!err?.response) {
                 setErrMsg('No Server Response');
             } else if (err.response?.status === 400) {
-                setErrMsg('Username or password incorrect');
+                setErrMsg('Missing Username or Password');
             } else if (err.response?.status === 401) {
                 setErrMsg('Unauthorized');
             } else {
@@ -59,7 +51,7 @@ const Login = () => {
     }
 
     return (
-        <>
+        <div class="div-box">
             {success ? (
                 <section>
                     <h1>You are logged in!</h1>
@@ -103,7 +95,7 @@ const Login = () => {
                     </p>
                 </section>
             )}
-        </>
+        </div>
     )
 }
 
