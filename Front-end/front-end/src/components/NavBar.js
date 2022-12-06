@@ -1,10 +1,15 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
 import "./NavBar.css";
 
 function NavBar() {
   const [click, setClick] = useState(false);
-
+  const navigate = useNavigate();
+  const logout = async () => {
+    // if used in more components, this should be in context 
+    // axios to /logout endpoint 
+    navigate('/login');
+}
   const handleClick = () => setClick(!click);
   return (
     <>
@@ -50,15 +55,9 @@ function NavBar() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink
-                exact
-                to="/contact"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Contact Us
-              </NavLink>
+            <div className="flexGrow">
+                <button onClick={logout}>Sign Out</button>
+            </div>      
             </li>
           </ul>
           <div className="nav-icon" onClick={handleClick}>
