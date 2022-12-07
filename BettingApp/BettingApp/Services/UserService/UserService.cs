@@ -32,7 +32,7 @@ namespace Test.API.Services.UserService
             }
             CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
             User user = new User {
-                Id = new Guid(),
+                UserId = new Guid(),
                 UserName = request.UserName,
                 Email = request.Email,
                 PasswordHash = passwordHash,
