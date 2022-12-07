@@ -1,4 +1,5 @@
 using BettingApp.Data;
+using BettingApp.Services.BetsService;
 using BettingApp.Services.UserService;
 using Microsoft.EntityFrameworkCore;
 using Test.API.Services.UserService;
@@ -18,6 +19,7 @@ builder.Services.AddCors();
 
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IBetService, BetService>();
 builder.Services.AddDbContext<DataContext>();
 var app = builder.Build();
 app.UseCors(builder =>

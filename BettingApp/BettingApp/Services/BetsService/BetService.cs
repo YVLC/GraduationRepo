@@ -14,7 +14,8 @@ public class BetService : IBetService
 
     public async Task<bool> CreateBet(Bets bets)
     {
-       _context.Bets.Add(bets);
+        _context.Bets.Add(bets);
+        await _context.SaveChangesAsync();
         return true;
     }
 
