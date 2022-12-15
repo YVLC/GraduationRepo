@@ -1,6 +1,7 @@
 ﻿using BettingApp.Data;
 using BettingApp.Models;
 using BettingApp.Requests;
+using BettingApp.Services.BetsService;
 using BettingApp.Services.UserService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,16 +17,29 @@ namespace BettingApp.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly IBetService _betService;
 
-        public UserController(IUserService userService)
+        public UserController(IUserService userService, IBetService betService)
         {
             _userService = userService;
+            _betService = betService;
         }
 
         [HttpGet("get-all")]
         public async Task<ActionResult<List<User>>> Get()
         {
-            return await _userService.GetAllUsers();
+            List<User> temp = new List<User>();
+            var users = await _userService.GetAllUsers();
+            foreach(var user in users)
+            {
+                var b = await _betService.GetAllBetsByUser(user.UserId);
+                foreach (var item in b)
+                {
+                    user.Bets.Add(item);
+                }
+                temp.Add(user);
+            }
+            return temp;
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> Get(Guid id)
