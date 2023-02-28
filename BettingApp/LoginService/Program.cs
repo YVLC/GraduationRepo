@@ -1,6 +1,6 @@
-using BettingApp.Data;
-using BettingApp.Services.BetsService;
+using LoginService.Data;
 using Microsoft.EntityFrameworkCore;
+using LoginService.UserService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,9 +14,8 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddCors();
-
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<IBetService, BetService>();
 builder.Services.AddDbContext<DataContext>();
 var app = builder.Build();
 app.UseCors(builder =>

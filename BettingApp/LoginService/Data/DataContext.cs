@@ -1,12 +1,12 @@
-﻿using BettingApp.Models;
+﻿using LoginService.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BettingApp.Data
+namespace LoginService.Data
 {
     public class DataContext : DbContext
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
-        public DbSet<Bets> Bets { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

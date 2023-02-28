@@ -1,5 +1,4 @@
 ﻿using BettingApp.Models;
-using BettingApp.Requests;
 
 namespace BettingApp.Services.BetsService
 {
