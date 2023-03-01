@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  loginservice:
+    image: ${DOCKER_REGISTRY-}loginservice
+    build:
+      context: .
+      dockerfile: LoginService/Dockerfile
+
+  bettingapp:
+    image: ${DOCKER_REGISTRY-}bettingapp
+    build:
+      context: .
+      dockerfile: BettingApp/Dockerfile
+
