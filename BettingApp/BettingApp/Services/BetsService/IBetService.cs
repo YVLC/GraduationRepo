@@ -4,7 +4,7 @@ namespace BettingApp.Services.BetsService
 {
     public interface IBetService
     {
-        Task<List<Bets>> GetAllBetsByUser(Guid id);
+        Task<List<Bets>> GetAllBetsByUser();
         Task<bool> CreateBet(Bets bets);
     }
 }

@@ -24,13 +24,6 @@ namespace LoginService.UserService
         public async Task<int> Register(AuthRequest request)
         {
             var users = await _context.Users.ToListAsync();
-            foreach (var i in users)
-            {
-                if (i.UserName == request.UserName)
-                {
-                    throw new Exception(StatusCodes.Status409Conflict.ToString());
-                }
-            }
             CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
             User user = new User
             {

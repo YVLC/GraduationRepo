@@ -25,11 +25,9 @@ app.UseCors(builder =>
            .AllowAnyHeader();
 });
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+
 
 app.UseHttpsRedirection();
 

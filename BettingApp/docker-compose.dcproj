@@ -9,6 +9,13 @@
     <DockerServiceName>loginservice</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="mysqlservice.yaml" />
+    <None Include="mysql-pv-claim.yaml" />
+    <None Include="Mysql.yaml" />
+    <None Include="SecondService.yaml" />
+    <None Include="FirstService.yaml" />
+    <None Include="Queue.yaml" />
+    <None Include="kubernetes.yaml" />
     <None Include="docker-compose.override.yml">
       <DependentUpon>docker-compose.yml</DependentUpon>
     </None>

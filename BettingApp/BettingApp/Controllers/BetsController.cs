@@ -17,9 +17,9 @@ namespace BettingApp.Controllers
             }
 
             [HttpGet("get-all")]
-            public async Task<ActionResult<List<Bets>>> Get(Guid id)
+            public async Task<ActionResult<List<Bets>>> Get()
             {
-                return await _betService.GetAllBetsByUser(id);
+                return await _betService.GetAllBetsByUser();
             }
             [HttpPost("create")]
             public async Task<ActionResult<bool>> Get(Bets bet)
